@@ -84,11 +84,11 @@ export const CONFIG = {
 
 The web app config identifiers are intentionally public. **Never** publish your GM email/password or a Firebase service-account key. Your security depends on Firebase Authentication and the rules from step 2.
 
-Commit the edited `config.js` to GitHub, let Pages redeploy, then refresh your website. You should see **LIVE CONNECTION** rather than **LOCAL DEMO**. Select **GM ACCESS**, sign in with your GM email/password, and confirm that **DIRECTOR ONLINE** appears. Players do *not* sign in; their browsers use anonymous authentication.
+Commit the edited `config.js` to GitHub, let Pages redeploy, then refresh your website. You should see **LIVE CONNECTION** rather than **LOCAL DEMO**. Select **GM CONTROLS**, sign in with your GM email/password, and confirm that **GM CONNECTED** appears. Players do *not* sign in; their browsers use anonymous authentication.
 
 ## D. Real multiplayer test — GM computer plus phone
 
-1. On the GM computer, visit your GitHub Pages site, log in using **GM ACCESS**, and press **TUNE IN**.
+1. On the GM computer, visit your GitHub Pages site, log in using **GM CONTROLS**, and press **TUNE IN**.
 2. On a phone or second computer, open the **same** URL, **do not** log in, and press **TUNE IN**. Both devices should say **LIVE CONNECTION**. Set volume low or use headphones to prevent echoes.
 3. GM: Start **Mountain Wind**. Verify both devices hear wind.
 4. GM: Play **Highway Twilight**. Verify both devices hear music **and** wind.
@@ -127,7 +127,7 @@ Track categories in `playlist.json`:
 | --- | --- | --- |
 | `music` | Regular radio station songs | Channel A; sequential next song |
 | `combat` | Combat music | Channel A while Combat Mode is enabled; sequential next combat track |
-| `announcements` | Miss Melody's DJ bulletins | Temporarily replaces Channel A song, then resumes it |
+| `announcements` | Recorded announcements and audio cues | Temporarily replaces Channel A song, then resumes it |
 | `ambience` | Wind, rain, machinery, city noise, etc. | Channel B, independently looping |
 
 You may replace the included demo songs with your own licensed or original files. **Do not upload copyrighted commercial Fallout music to a public GitHub Pages repository without permission.**
