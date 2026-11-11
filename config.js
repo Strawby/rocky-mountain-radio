@@ -1,14 +1,14 @@
 /**
  * Rocky Mountain Radio Firebase web configuration.
- * Complete gmUid and databaseURL after setting up Firebase Authentication
- * and Realtime Database. While either is empty, the app remains in LOCAL DEMO.
+ * Firebase Authentication and Realtime Database are configured.
+ * Listening is anonymous; only the designated GM UID can change playback.
  *
  * Firebase web API keys and app IDs are public identifiers; enforce access
  * using the repository's Realtime Database rules and the correct GM UID.
  */
 export const CONFIG = {
   stationId: "rocky-mountain-radio",
-  gmUid: "",
+  gmUid: "36sQwFRFePbqsYmEnduj9buOjS52",
   firebase: {
     apiKey: "AIzaSyDraVIIpQ4OwnoOh38wd8XAfUcwMHAGu34",
     authDomain: "rocky-mountain-radio.firebaseapp.com",
