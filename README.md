@@ -1,8 +1,8 @@
 # Rocky Mountain Radio 📻
 
-A tiny, **GM-controlled synchronized Fallout-inspired radio** for tabletop games. It runs on **GitHub Pages** with **no build step and no port forwarding**. Players open one URL, press **Tune In** once, and hear the same songs, prerecorded announcements, and optional background ambience. The GM controls regular music, a separate combat rotation, DJ bulletins, and an independent looping ambience layer: pausing or stopping the radio never interrupts the environment. The GM can also interrupt a song with a bulletin and resume it afterward.
+A tiny, **GM-controlled synchronized Fallout-inspired radio** for tabletop games. It runs on **GitHub Pages** with **no build step and no port forwarding**. Players open one URL, press **Tune In** once, and hear the same songs, prerecorded announcements, and optional background ambience. The GM controls regular music, a separate combat rotation, recorded announcements, and an independent looping ambience layer: pausing or stopping the radio never interrupts the environment. The GM can also interrupt a song with a bulletin and resume it afterward.
 
-It has an original post-apocalyptic radio interface and includes **seven original synthesized demo recordings** (two regular tunes, two combat cues, two ambient loops, and a test-signal station ID); **no copyrighted Fallout songs, logos, or recordings** are included. Replace the samples with music you have permission to share and your own recordings of Miss Melody.
+It has an original post-apocalyptic radio interface and includes **seven original synthesized demo recordings** (two regular tunes, two combat cues, two ambient loops, and a test-signal station ID); **no copyrighted Fallout songs, logos, or recordings** are included. Replace the samples with music you have permission to share and your own recordings of the announcer.
 
 ## New: Combat Mode (GM-controlled)
 
@@ -87,24 +87,24 @@ Commit/upload your edited `config.js` to GitHub, then refresh the deployed page.
 
 ### D. Start broadcasting
 
-1. Open your GitHub Pages URL. Press **GM ACCESS**.
+1. Open your GitHub Pages URL. Press **GM CONTROLS**.
 2. Sign in with the email/password of the GM account created in Firebase.
 3. Select a song. Your browser will tune in; if audio is blocked, click **Leave Frequency** then **Tune In**.
 4. Share the same GitHub Pages URL with your players. They **only need to click Tune In**. They do not need Firebase accounts, passwords, special software, or Foundry modules.
-5. Press an announcement's ▶ during a song. Everyone switches to the recording at roughly the same moment; when it finishes, music resumes where it left off. **END BULLETIN + RESUME MUSIC** works too.
+5. Press an announcement's ▶ during a song. Everyone switches to the recording at roughly the same moment; when it finishes, music resumes where it left off. **END ANNOUNCEMENT · RESUME TRACK** works too.
 
 ## Adding your actual music and voice recordings
 
 1. Export the audio as **MP3 or OGG**. A bitrate of about 96–160 kbps is usually plenty for a radio effect.
-2. Put files under `media/`, e.g. `media/miss-melody-georgetown.mp3`.
+2. Put files under `media/`, e.g. `media/georgetown-bulletin.mp3`.
 3. Edit `playlist.json` and add an item to the relevant `music`, `combat`, `announcements`, or `ambience` array:
 
    ```json
    {
      "id": "georgetown-power-news",
      "title": "Georgetown Restores Power",
-     "artist": "Miss Melody · Evening News",
-     "src": "media/miss-melody-georgetown.mp3",
+     "artist": "Rocky Mountain Radio · News",
+     "src": "media/georgetown-bulletin.mp3",
      "duration": 37
    }
    ```
@@ -163,7 +163,7 @@ The website now has **two independent synchronized audio layers**:
 
 | Layer | GM controls | Behavior |
 |---|---|---|
-| **Radio (Channel A)** | Switch regular/combat rotation, play songs, interrupt with DJ announcements, pause/resume, previous/next, seek, off air | Regular and combat songs and bulletins share one audio channel; bulletins interrupt the song and restore it afterward. |
+| **Radio (Channel A)** | Switch regular/combat rotation, play songs, interrupt with announcements, pause/resume, previous/next, seek, off air | Regular and combat songs and bulletins share one audio channel; bulletins interrupt the song and restore it afterward. |
 | **Ambience (Channel B)** | Select any ambience track, pause/resume, previous/next, seek, stop | Loops in a separate browser audio element, without stopping or restarting when the radio changes. |
 
 Every listener has their own **RADIO** and **AMBIENCE** volume sliders. These volumes affect only their own device; the GM's track and playback commands affect everyone. The single **Tune In** button enables/disables *both* audio layers on that browser.
