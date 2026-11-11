@@ -442,8 +442,17 @@ function hookButtons() {
     player.volume = volumeGain(initial);
     $(labelId).textContent = `${initial}%`;
     localStorage.setItem(savedKey, String(initial));
+    // Gentle pointer-only detent around normal volume (100%).
+    // Keyboard arrows bypass the detent so fine adjustments remain possible.
+    let pointerDragging = false;
+    slider.addEventListener('pointerdown', () => { pointerDragging = true; });
+    for (const eventName of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+      slider.addEventListener(eventName, () => { pointerDragging = false; });
+    }
     slider.addEventListener('input', (event) => {
-      const selected = safeVolume(event.target.value);
+      const raw = safeVolume(event.target.value);
+      const selected = pointerDragging && Math.abs(raw - 100) <= 4 ? 100 : raw;
+      slider.value = String(selected);
       player.volume = volumeGain(selected);
       $(labelId).textContent = `${selected}%`;
       localStorage.setItem(savedKey, String(selected));
