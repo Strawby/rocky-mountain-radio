@@ -35,3 +35,14 @@
 .combat-list-note{font-size:11px;color:#e1ac92;margin:6px 0 12px}
 #combatMusicSection .track-row.active{background:#51372d;border-color:#dc9370}
 @media(max-width:650px){.combat-controls{flex-direction:column;align-items:stretch;gap:12px}.combat-toggle{min-width:0;width:100%}}
+
+/* Compact playback-first layout: remove the obsolete promotional header/hero
+   and let the radio controls be the first visible content. */
+.site-header{justify-content:flex-end;padding:16px 0 14px}
+.header-actions{margin-left:auto}
+.main-grid{margin-top:20px}
+@media(max-width:600px){
+  .site-header{align-items:center;padding:12px 0}
+  .header-actions{flex-direction:row;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px}
+  .main-grid{margin-top:14px}
+}
