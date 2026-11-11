@@ -22,13 +22,11 @@
     <section class="main-grid" aria-label="Radio player and station information">
       <div class="receiver-wrap">
         <div class="receiver">
-          <div class="receiver-top"><span>RMR · MODEL 77</span><div class="receiver-vents" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>HIGH COUNTRY</span></div>
+          <div class="receiver-top"><div class="receiver-vents" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span>HIGH COUNTRY</span></div>
           <div class="receiver-face">
             <div class="freq-panel">
-              <span class="label-top">TUNED TO THE WASTELAND</span>
               <div class="freq-display"><span class="freq-number">680</span><span class="freq-unit">AM</span></div>
               <div class="freq-scale" aria-hidden="true"><div class="needle"></div><span>540</span><span>680</span><span>900</span><span>1200</span><span>1600</span></div>
-              <p class="receiver-slogan">ONE VOICE. ONE FREQUENCY.</p>
             </div>
             <div class="speaker" aria-hidden="true"><div class="speaker-lines"></div><div class="speaker-center"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><path id="wavePath" d="M0 30 L100 30" stroke="currentColor" stroke-width="2.8" fill="none"/></svg></div></div>
           </div>
@@ -50,7 +48,7 @@
       <aside class="info-panel">
         <div class="info-topline"><span class="live-dot"></span><span id="programLabel">BROADCAST STATUS</span><span class="info-star">✳</span></div>
         <div id="combatStatus" class="combat-status" hidden>⚠ COMBAT MODE ACTIVE · RADIO OVERRIDE</div>
-        <div class="record-art" aria-hidden="true"><div class="record-ring r1"></div><div class="record-ring r2"></div><div class="record-ring r3"></div><div class="record-label"><span>RMR</span><small>LONG PLAY</small></div></div>
+        <div class="record-art" aria-hidden="true"><div class="record-ring r1"></div><div class="record-ring r2"></div><div class="record-ring r3"></div><div class="record-label"></div></div>
         <div class="now-playing"><span class="subheading">CURRENTLY ON THE AIR</span><h2 id="trackTitle">Waiting for a transmission</h2><p id="trackArtist">The high country is quiet.</p></div>
         <div class="progress-box"><div class="progress-meta"><span id="elapsedLabel">0:00</span><span id="durationLabel">—:——</span></div><div class="progress-track" aria-label="Broadcast progress"><div id="progressFill"></div></div></div>
         <div class="message-card"><span class="signal-symbol">✦</span><p id="stationMessage">Select a track to start the broadcast.</p><small>— PLAYBACK STATUS</small></div>
@@ -63,7 +61,7 @@
       <div class="ambient-state-badge"><span id="ambientLive" class="indicator-light"></span><span id="ambientState">OFF</span></div>
     </section>
 
-    <div class="bottom-bar"><span>◈ &nbsp; INDEPENDENT BROADCASTING • ROCKY MOUNTAINS</span><span id="modeDescription">LOCAL PREVIEW • SAME-BROWSER TABS ONLY</span></div>
+    <div class="bottom-bar"><span id="modeDescription">LOCAL PREVIEW • SAME-BROWSER TABS ONLY</span></div>
 
     <section id="gmPanel" class="gm-panel" hidden aria-labelledby="gmTitle">
       <div class="gm-head"><div><p class="overline">AUTHORIZED PERSONNEL ONLY</p><h2 id="gmTitle">GM audio controls</h2><p>Control music, combat tracks, announcements, and looping ambience independently for every listener.</p></div><div class="gm-head-actions"><span id="gmBadge" class="gm-badge">GM CONSOLE</span><button id="signOutButton" class="button button-quiet button-small" type="button" hidden>SIGN OUT</button></div></div>
@@ -118,7 +116,6 @@
       <div id="demoWarning" class="demo-warning" hidden>LOCAL DEMO — Controls sync with other tabs in this browser only. Set up Firebase before sharing the site with your players.</div>
     </section>
 
-    <footer class="footer"><span>© POST-WAR AIRWAVES • FAN-MADE ORIGINAL DESIGN</span><span>TRANSMITTING HOPE SINCE 2281</span></footer>
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <audio id="stationAudio" preload="auto"></audio>
