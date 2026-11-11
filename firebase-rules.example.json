@@ -3,7 +3,7 @@
     "stations": {
       "rocky-mountain-radio": {
         ".read": "auth != null",
-        ".write": "auth != null && auth.uid === 'PASTE_YOUR_GM_UID_HERE'",
+        ".write": "auth != null && auth.uid === '36sQwFRFePbqsYmEnduj9buOjS52'",
         ".validate": "newData.hasChildren(['mode', 'playing', 'positionMs', 'startedAt', 'revision']) && newData.child('revision').isNumber() && newData.child('revision').val() >= 0 && newData.child('positionMs').isNumber() && newData.child('positionMs').val() >= 0 && newData.child('startedAt').isNumber() && newData.child('playing').isBoolean() && newData.child('mode').isString() && (newData.child('mode').val() === 'music' || newData.child('mode').val() === 'combat' || newData.child('mode').val() === 'announcement' || newData.child('mode').val() === 'off') && (!newData.child('ambience').exists() || (newData.child('ambience').hasChildren(['playing', 'positionMs', 'startedAt', 'revision']) && newData.child('ambience/playing').isBoolean() && newData.child('ambience/positionMs').isNumber() && newData.child('ambience/positionMs').val() >= 0 && newData.child('ambience/startedAt').isNumber() && newData.child('ambience/revision').isNumber() && newData.child('ambience/revision').val() >= 0)) && (!newData.child('combatActive').exists() || newData.child('combatActive').isBoolean()) && (!newData.child('combatReturn').exists() || (newData.child('combatReturn/mode').isString() && newData.child('combatReturn/positionMs').isNumber() && newData.child('combatReturn/playing').isBoolean()))"
       }
     }
