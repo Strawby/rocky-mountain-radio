@@ -1,0 +1,59 @@
+{
+  "music": [
+    {
+      "id": "highway-twilight",
+      "title": "Highway Twilight",
+      "artist": "RMR House Orchestra · original demo instrumental",
+      "src": "media/highway-twilight.mp3",
+      "duration": 25
+    },
+    {
+      "id": "dusty-dial",
+      "title": "Dusty Dial",
+      "artist": "RMR Test Transmission · original demo instrumental",
+      "src": "media/dusty-dial.mp3",
+      "duration": 19
+    }
+  ],
+  "combat": [
+    {
+      "id": "raiders-at-the-pass",
+      "title": "Raiders at the Pass",
+      "artist": "RMR Battle Orchestra · original demo combat cue",
+      "src": "media/raiders-at-the-pass.mp3",
+      "duration": 28
+    },
+    {
+      "id": "last-stand-at-the-dam",
+      "title": "Last Stand at the Dam",
+      "artist": "RMR Battle Orchestra · original demo combat cue",
+      "src": "media/last-stand-at-the-dam.mp3",
+      "duration": 30
+    }
+  ],
+  "announcements": [
+    {
+      "id": "station-ident",
+      "title": "Station Identification",
+      "artist": "Replace this test signal with your own recorded DJ announcement",
+      "src": "media/station-ident.mp3",
+      "duration": 6
+    }
+  ],
+  "ambience": [
+    {
+      "id": "mountain-wind",
+      "title": "Mountain Wind",
+      "artist": "Cold air across the high country · original looping ambience",
+      "src": "media/mountain-wind.mp3",
+      "duration": 30
+    },
+    {
+      "id": "radiation-rain",
+      "title": "Wasteland Rain",
+      "artist": "Distant rainfall and occasional thunder · original looping ambience",
+      "src": "media/wasteland-rain.mp3",
+      "duration": 30
+    }
+  ]
+}
