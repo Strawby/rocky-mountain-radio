@@ -190,6 +190,10 @@ The sample `playlist.json` includes two original synthesized 30-second ambient l
 
 **Updating an existing live site:** Deploy the updated `index.html`, `app.js`, `styles.css`, `playlist.json`, ambient MP3s, and rules. Publish the updated `firebase-rules.example.json` with your actual GM UID substituted in Firebase **Realtime Database → Rules**. Existing station records without an ambience field are automatically handled; the first new GM command adds that field. Ask players to refresh the page after redeploying.
 
+## Leaving the frequency (per-device mute)
+
+**TUNE IN** and **LEAVE FREQUENCY** apply only to the current browser, not the shared Firebase broadcast. After a listener selects **LEAVE FREQUENCY**, both audio layers remain silent during automatic song changes, GM track changes, announcements, combat switches, and ambience changes. Only explicitly clicking **TUNE IN** resumes local audio at the current shared position. GM transport commands still advance the station for other listeners even if the GM has left the frequency.
+
 ## Local volume scale (0–200%)
 
 Both Radio and Ambience have independent, per-listener volume controls. The scale is intentionally quiet for tabletop voice-chat use: **new 100% equals the old 10% audio level**, and **new 200% equals the old 100% audio level**. From 0–100, the slider increases gain smoothly from silence to 10% of the original maximum; from 100–200, it increases from 10% to the original maximum. No amplification above the original maximum occurs.
