@@ -247,8 +247,12 @@ function syncAudio() {
   if (state.playing) {
     if (audio.paused) {
       audio.play().then(() => {
-        if (tuned) hint('You are tuned in. GM controls the broadcast.');
-      }).catch(() => hint('Your browser blocked playback. Tap LEAVE FREQUENCY, then TUNE IN again.', true));
+        // A pending play() may finish after LEAVE FREQUENCY was clicked.
+        if (!tuned) { audio.pause(); return; }
+        hint('You are tuned in. GM controls the broadcast.');
+      }).catch(() => {
+        if (tuned) hint('Your browser blocked playback. Tap LEAVE FREQUENCY, then TUNE IN again.', true);
+      });
     }
   } else { audio.pause(); }
 }
@@ -278,8 +282,10 @@ function syncAmbience() {
     }
   }
   if (ambient.playing) {
-    if (ambientAudio.paused) ambientAudio.play().catch(() => {
-      hint('Your browser blocked audio. Click LEAVE FREQUENCY, then TUNE IN again.', true);
+    if (ambientAudio.paused) ambientAudio.play().then(() => {
+      if (!tuned) ambientAudio.pause();
+    }).catch(() => {
+      if (tuned) hint('Your browser blocked audio. Click LEAVE FREQUENCY, then TUNE IN again.', true);
     });
   } else { ambientAudio.pause(); }
 }
@@ -353,13 +359,13 @@ async function toggleCombat() {
     return;
   }
   if (!library.combat.length) { notify('Add combat tracks to playlist.json first.'); return; }
-  if (!tuned) setTuned(true);
+  // Broadcast commands must not silently opt this device back into audio.
   await send({ mode: 'combat', trackId: library.combat[0].id, playing: true,
     positionMs: 0, resume: null, combatActive: true, combatReturn: radioSnapshot() });
 }
 async function playTrack(kind, trackId) {
   if (!isGM || !list(kind).some((t) => t.id === trackId)) return;
-  if (!tuned) setTuned(true); // GM hears radio for song and bulletin completion.
+  // Explicit Tune In is the only way to enable local listening.
   let resume = null;
   if (kind === 'announcement') {
     if (state?.mode === 'announcement') resume = state.resume || null;
@@ -394,7 +400,7 @@ async function restoreRadio() {
 // Ambient files loop locally and never trigger radio's auto-next logic.
 async function playAmbience(trackId) {
   if (!isGM || !library.ambience.some((t) => t.id === trackId)) return;
-  if (!tuned) setTuned(true);
+  // Keep the GM's local audio muted when they have left the frequency.
   await send({ trackId, playing: true, positionMs: 0 }, 'ambience');
 }
 async function pauseResumeAmbience() {
@@ -506,6 +512,9 @@ function hookButtons() {
     try { await firebase.signOut(auth); notify('Signed out of the console.'); }
     catch (error) { notify(`Could not sign out: ${error.message}`); }
   });
+  // Never let a delayed media event restart local audio while disconnected.
+  audio.addEventListener('play', () => { if (!tuned) audio.pause(); });
+  ambientAudio.addEventListener('play', () => { if (!tuned) ambientAudio.pause(); });
   audio.addEventListener('loadedmetadata', () => { syncAudio(); updateProgress(); });
   ambientAudio.addEventListener('loadedmetadata', () => { syncAmbience(); updateAmbientProgress(); });
   ambientAudio.addEventListener('error', () => {
