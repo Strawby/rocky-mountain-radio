@@ -1,59 +1,290 @@
 {
-  "music": [
-    {
-      "id": "highway-twilight",
-      "title": "Highway Twilight",
-      "artist": "RMR House Orchestra · original demo instrumental",
-      "src": "media/highway-twilight.mp3",
-      "duration": 25
-    },
-    {
-      "id": "dusty-dial",
-      "title": "Dusty Dial",
-      "artist": "RMR Test Transmission · original demo instrumental",
-      "src": "media/dusty-dial.mp3",
-      "duration": 19
-    }
-  ],
-  "combat": [
-    {
-      "id": "raiders-at-the-pass",
-      "title": "Raiders at the Pass",
-      "artist": "RMR Battle Orchestra · original demo combat cue",
-      "src": "media/raiders-at-the-pass.mp3",
-      "duration": 28
-    },
-    {
-      "id": "last-stand-at-the-dam",
-      "title": "Last Stand at the Dam",
-      "artist": "RMR Battle Orchestra · original demo combat cue",
-      "src": "media/last-stand-at-the-dam.mp3",
-      "duration": 30
-    }
-  ],
-  "announcements": [
-    {
-      "id": "station-ident",
-      "title": "Station Identification",
-      "artist": "Replace this test signal with your own recorded DJ announcement",
-      "src": "media/station-ident.mp3",
-      "duration": 6
-    }
-  ],
-  "ambience": [
-    {
-      "id": "mountain-wind",
-      "title": "Mountain Wind",
-      "artist": "Cold air across the high country · original looping ambience",
-      "src": "media/mountain-wind.mp3",
-      "duration": 30
-    },
-    {
-      "id": "radiation-rain",
-      "title": "Wasteland Rain",
-      "artist": "Distant rainfall and occasional thunder · original looping ambience",
-      "src": "media/wasteland-rain.mp3",
-      "duration": 30
-    }
-  ]
+    "music":  [
+                  {
+                      "id":  "highway-twilight",
+                      "title":  "Highway Twilight",
+                      "artist":  "RMR House Orchestra Â· original demo instrumental",
+                      "src":  "media/highway-twilight.mp3",
+                      "duration":  25
+                  },
+                  {
+                      "id":  "dusty-dial",
+                      "title":  "Dusty Dial",
+                      "artist":  "RMR Test Transmission Â· original demo instrumental",
+                      "src":  "media/dusty-dial.mp3",
+                      "duration":  19
+                  },
+                  {
+                      "id":  "music-803c345fb320",
+                      "title":  "Mack the Knife",
+                      "artist":  "Bobby Drain",
+                      "src":  "media/radio/Mack%20the%20Knife%20-%20Bobby%20Drain.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-a87c1cf65259",
+                      "title":  "[We\u0027re Gonna] Rock Around The Clock",
+                      "artist":  "Bill Haley \u0026 His Comets",
+                      "src":  "media/radio/%5BWe\u0027re%20Gonna%5D%20Rock%20Around%20The%20Clock%20-%20Bill%20Haley%20%26%20His%20Comets.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-75f0fa1b7fb5",
+                      "title":  "Johnny Be Goode",
+                      "artist":  "Chuck Berry",
+                      "src":  "media/radio/Chuck%20Berry/Johnny%20Be%20Goode.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-759592c72dca",
+                      "title":  "Maybelline",
+                      "artist":  "Chuck Berry",
+                      "src":  "media/radio/Chuck%20Berry/Maybelline.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-9bf2dca1adab",
+                      "title":  "Rock and Roll Music",
+                      "artist":  "Chuck Berry",
+                      "src":  "media/radio/Chuck%20Berry/Rock%20and%20Roll%20Music.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-de64cb331be8",
+                      "title":  "Roll over Beethoven",
+                      "artist":  "Chuck Berry",
+                      "src":  "media/radio/Chuck%20Berry/Roll%20over%20Beethoven.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-11f073e694af",
+                      "title":  "Sweet Little Sixteen",
+                      "artist":  "Chuck Berry",
+                      "src":  "media/radio/Chuck%20Berry/Sweet%20Little%20Sixteen.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-50c7b9b64369",
+                      "title":  "All Shook Up",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/All%20Shook%20Up.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-4f10fb337e55",
+                      "title":  "Don\u0027t Be Cruel",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/Don\u0027t%20Be%20Cruel.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-6ef37e29e695",
+                      "title":  "Heartbreak Hotel",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/Heartbreak%20Hotel.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-23f80adf204e",
+                      "title":  "Hound Dog",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/Hound%20Dog.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-d2d719e246a8",
+                      "title":  "Jailhouse Rock",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/Jailhouse%20Rock.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-11b4239ddf7f",
+                      "title":  "That\u0027s All Right",
+                      "artist":  "Elvis Presley",
+                      "src":  "media/radio/Elvis%20Presley/That\u0027s%20All%20Right.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-965fab47412a",
+                      "title":  "Ain\u0027t That a Shame",
+                      "artist":  "Fats Domino",
+                      "src":  "media/radio/Fats%20Domino/Ain\u0027t%20That%20a%20Shame.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-0a39445c8ead",
+                      "title":  "Blue Monday",
+                      "artist":  "Fats Domino",
+                      "src":  "media/radio/Fats%20Domino/Blue%20Monday.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-aff6ed7eb8cd",
+                      "title":  "Blueberry Hill",
+                      "artist":  "Fats Domino",
+                      "src":  "media/radio/Fats%20Domino/Blueberry%20Hill.mp3",
+                      "duration":  180
+                  },
+                  {
+                      "id":  "music-b9a95dd279db",
+                      "title":  "I’m Walkin’",
+                      "artist":  "Fats Domino",
+                      "src":  "media/radio/Fats%20Domino/I%E2%80%99m%20Walkin%E2%80%99.mp3",
+                      "duration":  180
+                  }
+              ],
+    "combat":  [
+                   {
+                       "id":  "raiders-at-the-pass",
+                       "title":  "Raiders at the Pass",
+                       "artist":  "RMR Battle Orchestra Â· original demo combat cue",
+                       "src":  "media/raiders-at-the-pass.mp3",
+                       "duration":  28
+                   },
+                   {
+                       "id":  "last-stand-at-the-dam",
+                       "title":  "Last Stand at the Dam",
+                       "artist":  "RMR Battle Orchestra Â· original demo combat cue",
+                       "src":  "media/last-stand-at-the-dam.mp3",
+                       "duration":  30
+                   }
+               ],
+    "announcements":  [
+                          {
+                              "id":  "station-ident",
+                              "title":  "Station Identification",
+                              "artist":  "Replace this test signal with your own recorded DJ announcement",
+                              "src":  "media/station-ident.mp3",
+                              "duration":  6
+                          }
+                      ],
+    "ambience":  [
+                     {
+                         "id":  "mountain-wind",
+                         "title":  "Mountain Wind",
+                         "artist":  "Cold air across the high country Â· original looping ambience",
+                         "src":  "media/mountain-wind.mp3",
+                         "duration":  30
+                     },
+                     {
+                         "id":  "radiation-rain",
+                         "title":  "Wasteland Rain",
+                         "artist":  "Distant rainfall and occasional thunder Â· original looping ambience",
+                         "src":  "media/wasteland-rain.mp3",
+                         "duration":  30
+                     },
+                     {
+                         "id":  "ambience-59f2c587cd85",
+                         "title":  "01-Metallic Monks",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/01-Metallic%20Monks.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-408cde5fb2ef",
+                         "title":  "02-Desert Wind",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/02-Desert%20Wind.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-b5cb9c05daf3",
+                         "title":  "03-A Trader\u0027s Life",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/03-A%20Trader\u0027s%20Life.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-5e35a9dc6e2f",
+                         "title":  "04-Valut of the Future",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/04-Valut%20of%20the%20Future.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-0989b5f00aec",
+                         "title":  "05-Industrial Junk",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/05-Industrial%20Junk.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-f79668c8adc7",
+                         "title":  "06-Moribund World",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/06-Moribund%20World.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-a257535d9d7c",
+                         "title":  "07-Vats of Goo",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/07-Vats%20of%20Goo.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-3b92b19605e3",
+                         "title":  "08-City of the Dead",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/08-City%20of%20the%20Dead.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-0e52eb285750",
+                         "title":  "09-Second Chance",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/09-Second%20Chance.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-39915e03d591",
+                         "title":  "10-Underground Troubles",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/10-Underground%20Troubles.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-72f03ff3da31",
+                         "title":  "11-City of Lost Angels",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/11-City%20of%20Lost%20Angels.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-8fbfabb88eee",
+                         "title":  "12-Followers\u0027 Credo",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/12-Followers\u0027%20Credo.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-d53213680538",
+                         "title":  "13-Radiation Storm",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/13-Radiation%20Storm.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-0e7ca41cb73b",
+                         "title":  "14-Acolytes of the New God",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/14-Acolytes%20of%20the%20New%20God.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-69fc63854062",
+                         "title":  "15-Flame of the Ancient World",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/15-Flame%20of%20the%20Ancient%20World.mp3",
+                         "duration":  180
+                     },
+                     {
+                         "id":  "ambience-fc732e3bfc0d",
+                         "title":  "16-Khans of New California",
+                         "artist":  "Wasteland Ambience",
+                         "src":  "media/ambience/16-Khans%20of%20New%20California.mp3",
+                         "duration":  180
+                     }
+                 ]
 }
