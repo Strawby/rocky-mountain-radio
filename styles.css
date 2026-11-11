@@ -48,8 +48,8 @@
 }
 
 /* Remove crossed-out branding copy while keeping the original radio artwork. */
-.receiver-top::before{content:"";flex:1}
+.receiver-top{justify-content:center}
+.receiver-top::before{content:none}
 .receiver-top .receiver-vents{flex:0 0 auto}
-.receiver-top>span:last-child{flex:1;text-align:right}
 .record-label:after{margin-top:0}
 .bottom-bar{justify-content:flex-end}
