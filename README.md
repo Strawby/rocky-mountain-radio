@@ -189,3 +189,9 @@ Add an `ambience` item to `playlist.json` and put the matching MP3/OGG in `media
 The sample `playlist.json` includes two original synthesized 30-second ambient loops. For smooth looping, edit your audio files to have seamless beginnings/ends. Accurate `duration` values help browsers stay in sync; the player uses the actual duration reported by the audio element when available. Browsers may not be perfectly sample-synchronized, but they will periodically correct audio drift.
 
 **Updating an existing live site:** Deploy the updated `index.html`, `app.js`, `styles.css`, `playlist.json`, ambient MP3s, and rules. Publish the updated `firebase-rules.example.json` with your actual GM UID substituted in Firebase **Realtime Database → Rules**. Existing station records without an ambience field are automatically handled; the first new GM command adds that field. Ask players to refresh the page after redeploying.
+
+## Local volume scale (0–200%)
+
+Both Radio and Ambience have independent, per-listener volume controls. The scale is intentionally quiet for tabletop voice-chat use: **new 100% equals the old 10% audio level**, and **new 200% equals the old 100% audio level**. From 0–100, the slider increases gain smoothly from silence to 10% of the original maximum; from 100–200, it increases from 10% to the original maximum. No amplification above the original maximum occurs.
+
+A listener's previous settings are migrated once: old values at or below 10% keep the same actual volume, while louder saved values are limited to the new 100% for a quieter first visit. Each listener can adjust their own level afterward. Neither slider changes any other listener's volume, and neither affects Firebase synchronization or combat mode.
