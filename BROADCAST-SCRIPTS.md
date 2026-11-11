@@ -1,28 +1,29 @@
-# Miss Melody: sample broadcast scripts
+# Optional broadcast and audio-cue scripts
 
-These are optional original scripts for recording on your phone or in Audacity. Each could become a short MP3 in `media/`, then an entry in `playlist.json` under `announcements`. Keep the unsettling parts subtle at first.
+These are neutral examples for any station host or automated broadcast system. Record them yourself, use sound effects, or replace them entirely. Save each recording under `media/` and add it to the `announcements` array in `playlist.json`.
 
-## 1. Station introduction (~20 seconds)
+## 1. Station identification (~15 seconds)
 
-*[Cheerful, cozy, slightly too sincere]*
+*[Friendly and clear]*
 
-"Well, hello there, sweethearts! You're listening to Rocky Mountain Radio, the voice of the high country! Whether you're counting caps, counting stars, or counting the miles to home, Miss Melody is right here to keep you company. No need to look for another station, darling. I've already found the best one for you!"
+"You're listening to Rocky Mountain Radio, the voice of the high country. Bringing you music, travel conditions, and news from across the Colorado wasteland. Stay safe out there."
 
-## 2. Georgetown power bulletin (~30 seconds)
+## 2. Georgetown power bulletin (~25 seconds)
 
-*[Professional enthusiasm]*
+*[Straight news delivery]*
 
-"Good news out of Georgetown tonight! The little mountain town's hydroelectric station is humming along better than ever, thanks to a very enterprising group of travelers. Now I'm hearing some folks would like a little taste of that extra electricity. The traders have ideas, the town council has opinions, and somebody's even talking about a brand-new radio transmitter! Isn't that precious? A brand-new radio station. Well... we all need our little dreams, don't we?"
+"Reports from Georgetown indicate that the hydroelectric plant is producing power again following repairs by a group of travelers. Local merchants are discussing how to use the additional electricity, while some residents are proposing a new radio relay for the mountain corridor. We'll report more as details become available."
 
-## 3. Competition, played much later (~25 seconds)
+## 3. Road conditions advisory (~20 seconds)
 
-*[Still smiling, but oddly deliberate]*
+*[Practical public-service announcement]*
 
-"A quick word about the strange signals some of you reported along the eastern roads. Please don't worry. We investigated those unauthorized transmissions, and I'm pleased to tell you the interference has been... resolved. Nobody has to listen to a voice they can't trust. That's why I've been here all these years. That's why I'll always be here. Now, let's have something cheerful!"
+"Attention caravans traveling westbound along the old interstate: reports of damaged pavement and unstable debris continue near the mountain passes. Travel in groups when possible, and check conditions with local settlements before setting out."
 
-## Tips
+## Recording and playback tips
 
-- Record **dry voice first**. A little high-pass/low-pass EQ, mild compression, and quiet crackle afterward can create a period-radio feel.
-- Leave 0.3–0.6 seconds of silence at either end so the first syllable isn't clipped.
-- Keep early announcements helpful and friendly; don't reveal the murder mystery too fast.
-- The app automatically returns to the interrupted song when the bulletin finishes, as long as the GM tab remains running.
+- Record a clean voice first. Mild EQ, compression, and low-level static can create a vintage radio sound.
+- Leave roughly half a second of silence at the beginning and end of each recording.
+- You can use `announcements` for news, commercials, warnings, musical stingers, or sound cues. No named DJ character is required.
+- Announcements interrupt Channel A and automatically restore the previous music track when they finish, provided the GM tab stays active.
+- Channel B ambience continues independently throughout.
