@@ -56,3 +56,7 @@
 
 /* Keep the frequency numerals clear of the tuning ruler on narrow screens. */
 @media(max-width:600px){.freq-display{transform:translateY(-15px)}}
+
+/* 0–200% local volume controls; reserve room for the new three-digit value. */
+.volume-stack .volume-group{grid-template-columns:17px 73px minmax(60px,1fr) 40px}
+.volume-group output{min-width:40px;text-align:right}
