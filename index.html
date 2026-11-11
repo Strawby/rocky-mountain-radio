@@ -38,8 +38,8 @@
         <div class="player-controls dual-mix-controls">
           <button id="tuneButton" class="button button-main" type="button"><span id="tuneIcon">▶</span> <span id="tuneLabel">TUNE IN</span></button>
           <div class="volume-stack" aria-label="Independent local volume controls">
-            <div class="volume-group"><span aria-hidden="true">♫</span><label for="volumeSlider">RADIO</label><input id="volumeSlider" type="range" min="0" max="200" value="100" step="1" aria-label="Radio volume on this device"><output id="volumeLabel">100%</output></div>
-            <div class="volume-group"><span aria-hidden="true">≈</span><label for="ambientVolumeSlider">AMBIENCE</label><input id="ambientVolumeSlider" type="range" min="0" max="200" value="100" step="1" aria-label="Ambience volume on this device"><output id="ambientVolumeLabel">100%</output></div>
+            <div class="volume-group"><span aria-hidden="true">♫</span><label for="volumeSlider">RADIO</label><span class="volume-slider-wrap"><input id="volumeSlider" type="range" min="0" max="200" value="100" step="1" aria-label="Radio volume on this device"><span class="volume-midpoint-marker" aria-hidden="true">100%</span></span><output id="volumeLabel">100%</output></div>
+            <div class="volume-group"><span aria-hidden="true">≈</span><label for="ambientVolumeSlider">AMBIENCE</label><span class="volume-slider-wrap"><input id="ambientVolumeSlider" type="range" min="0" max="200" value="100" step="1" aria-label="Ambience volume on this device"><span class="volume-midpoint-marker" aria-hidden="true">100%</span></span><output id="ambientVolumeLabel">100%</output></div>
           </div>
         </div>
         <div id="audioHint" class="audio-hint" role="status">Press <b>Tune In</b> once to enable sound in this browser.</div>
