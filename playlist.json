@@ -154,7 +154,7 @@
                           {
                               "id":  "station-ident",
                               "title":  "Station Identification",
-                              "artist":  "Replace this test signal with your own recorded DJ announcement",
+                              "artist":  "Demo station ID — replace with any recorded announcement or audio cue",
                               "src":  "media/station-ident.mp3",
                               "duration":  6
                           }
