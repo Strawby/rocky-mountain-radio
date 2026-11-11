@@ -1,17 +1,19 @@
 /**
- * Leave Firebase fields empty to run a local, same-browser-tab demo.
- * For a real synchronized station, follow README.md and fill these in.
- * Firebase web config / apiKey / GM UID are public identifiers, NOT secrets.
- * Access control is enforced by your Firebase Realtime Database rules.
+ * Rocky Mountain Radio Firebase web configuration.
+ * Complete gmUid and databaseURL after setting up Firebase Authentication
+ * and Realtime Database. While either is empty, the app remains in LOCAL DEMO.
+ *
+ * Firebase web API keys and app IDs are public identifiers; enforce access
+ * using the repository's Realtime Database rules and the correct GM UID.
  */
 export const CONFIG = {
   stationId: "rocky-mountain-radio",
   gmUid: "",
   firebase: {
-    apiKey: "",
-    authDomain: "",
+    apiKey: "AIzaSyDraVIIpQ4OwnoOh38wd8XAfUcwMHAGu34",
+    authDomain: "rocky-mountain-radio.firebaseapp.com",
     databaseURL: "",
-    projectId: "",
-    appId: ""
+    projectId: "rocky-mountain-radio",
+    appId: "1:728663078710:web:f7cc20c759760bbe916597"
   }
 };
