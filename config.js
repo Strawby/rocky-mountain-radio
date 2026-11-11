@@ -12,7 +12,7 @@ export const CONFIG = {
   firebase: {
     apiKey: "AIzaSyDraVIIpQ4OwnoOh38wd8XAfUcwMHAGu34",
     authDomain: "rocky-mountain-radio.firebaseapp.com",
-    databaseURL: "",
+    databaseURL: "https://rocky-mountain-radio-default-rtdb.firebaseio.com",
     projectId: "rocky-mountain-radio",
     appId: "1:728663078710:web:f7cc20c759760bbe916597"
   }
