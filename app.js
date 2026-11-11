@@ -168,7 +168,7 @@ function updateDisplay() {
   $('programLabel').textContent = state?.mode === 'announcement' ? 'SPECIAL BULLETIN'
     : state?.combatActive ? 'COMBAT FREQUENCY · ALERT' : broadcasting ? 'LIVE TRANSMISSION' : 'BROADCAST STATUS';
   $('trackTitle').textContent = track?.title || 'Waiting for a transmission';
-  $('trackArtist').textContent = track?.artist || 'The high country is quiet.';
+  $('trackArtist').textContent = track?.artist || '';
   document.querySelector('.record-art').classList.toggle('spinning', broadcasting && tuned);
   $('stationMessage').textContent = state?.mode === 'announcement'
     ? 'Announcement playing. The previous track will resume afterward.'
