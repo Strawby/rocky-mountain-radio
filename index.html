@@ -21,17 +21,17 @@
       </a>
       <div class="header-actions">
         <span id="connectionBadge" class="connection-badge"><span class="dot"></span> INITIALIZING</span>
-        <button id="gmAccessButton" class="button button-quiet button-small" type="button">⚙ GM ACCESS</button>
+        <button id="gmAccessButton" class="button button-quiet button-small" type="button">⚙ GM CONTROLS</button>
       </div>
     </header>
 
     <div class="eyebrow"><span>COLORADO TERRITORY</span><span class="separator">◆</span><span>THE VOICE OF THE HIGH COUNTRY</span></div>
     <section class="hero">
       <div class="hero-copy">
-        <p class="overline">A FRIENDLY VOICE IN AN UNFRIENDLY WORLD</p>
+        <p class="overline">SOUNDTRACKS FOR THE WASTELAND</p>
         <h1>Stay tuned,<br><em>stay alive.</em></h1>
-        <p>Good music. Local news. A familiar voice after dark. Whatever happens out there, darling, you can always find me right here.</p>
-        <div class="host-signoff"><span class="host-line"></span> MISS MELODY, YOUR HOST</div>
+        <p>Music, news, and soundscapes from across the high country. Tune in for the next transmission.</p>
+        <div class="host-signoff"><span class="host-line"></span> INDEPENDENT HIGH COUNTRY SIGNAL</div>
       </div>
       <div class="sunburst" aria-hidden="true">
         <svg viewBox="0 0 310 220"><circle cx="156" cy="115" r="71" stroke="currentColor" stroke-width="1"/><circle cx="156" cy="115" r="94" stroke="currentColor" stroke-width="1" stroke-dasharray="2 9"/><path d="M12 184 77 118l35 40 47-76 31 47 32-33 77 88" stroke="currentColor" stroke-width="2" fill="none"/><path d="M156 20v17M156 193v16M61 114H44M268 114h-17M90 46l12 12M220 173l12 12M90 180l12-12M219 58l12-12" stroke="currentColor" stroke-width="2"/></svg>
@@ -73,7 +73,7 @@
         <div class="record-art" aria-hidden="true"><div class="record-ring r1"></div><div class="record-ring r2"></div><div class="record-ring r3"></div><div class="record-label"><span>RMR</span><small>LONG PLAY</small></div></div>
         <div class="now-playing"><span class="subheading">CURRENTLY ON THE AIR</span><h2 id="trackTitle">Waiting for a transmission</h2><p id="trackArtist">The high country is quiet.</p></div>
         <div class="progress-box"><div class="progress-meta"><span id="elapsedLabel">0:00</span><span id="durationLabel">—:——</span></div><div class="progress-track" aria-label="Broadcast progress"><div id="progressFill"></div></div></div>
-        <div class="message-card"><span class="signal-symbol">✦</span><p id="stationMessage">“Don't you touch that dial, sweetheart. There's nowhere else you need to be.”</p><small>— MISS MELODY</small></div>
+        <div class="message-card"><span class="signal-symbol">✦</span><p id="stationMessage">Select a track to start the broadcast.</p><small>— PLAYBACK STATUS</small></div>
       </aside>
     </section>
 
@@ -86,9 +86,9 @@
     <div class="bottom-bar"><span>◈ &nbsp; INDEPENDENT BROADCASTING • ROCKY MOUNTAINS</span><span id="modeDescription">LOCAL PREVIEW • SAME-BROWSER TABS ONLY</span></div>
 
     <section id="gmPanel" class="gm-panel" hidden aria-labelledby="gmTitle">
-      <div class="gm-head"><div><p class="overline">AUTHORIZED PERSONNEL ONLY</p><h2 id="gmTitle">Broadcast control room</h2><p>Two independent audio layers. Switch to a combat-music rotation without interrupting the ambient soundscape.</p></div><div class="gm-head-actions"><span id="gmBadge" class="gm-badge">GM CONSOLE</span><button id="signOutButton" class="button button-quiet button-small" type="button" hidden>SIGN OUT</button></div></div>
+      <div class="gm-head"><div><p class="overline">AUTHORIZED PERSONNEL ONLY</p><h2 id="gmTitle">GM audio controls</h2><p>Control music, combat tracks, announcements, and looping ambience independently for every listener.</p></div><div class="gm-head-actions"><span id="gmBadge" class="gm-badge">GM CONSOLE</span><button id="signOutButton" class="button button-quiet button-small" type="button" hidden>SIGN OUT</button></div></div>
       <div id="loginPanel" class="login-panel" hidden>
-        <div><h3>Sign in as station director</h3><p>Listeners don't need an account or password. Only you need to sign in to change the broadcast.</p></div>
+        <div><h3>Sign in as game master</h3><p>Listeners don't need an account or password. Only the GM account can change the shared playback.</p></div>
         <form id="loginForm" class="login-form">
           <label>Email<input id="gmEmail" type="email" autocomplete="username" required placeholder="you@example.com"></label>
           <label>Password<input id="gmPassword" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
@@ -97,7 +97,7 @@
         <p id="loginError" class="form-error" role="alert"></p>
       </div>
       <div id="controlPanel" hidden>
-        <div class="channel-title"><div><span class="subheading">CHANNEL A · MUSIC & ANNOUNCEMENTS</span><h3>Radio broadcast</h3></div><span class="channel-pill">INDEPENDENT TRANSPORT</span></div>
+        <div class="channel-title"><div><span class="subheading">CHANNEL A · MUSIC & ANNOUNCEMENTS</span><h3>Music and announcements</h3></div><span class="channel-pill">INDEPENDENT TRANSPORT</span></div>
         <div class="combat-controls">
           <div><strong>COMBAT MUSIC OVERRIDE</strong><small>Switch to combat tracks on Channel A. Ending combat restores the previous radio track and position. Ambience continues.</small></div>
           <button id="combatToggle" class="button button-control combat-toggle" type="button" aria-pressed="false">⚔ ENGAGE COMBAT · SWITCH PLAYLIST</button>
@@ -110,14 +110,14 @@
             <button id="stopButton" class="button button-control danger" type="button">■ <span>OFF AIR</span></button>
           </div>
           <div class="scrub-row"><label for="gmSeek">BROADCAST POSITION</label><input type="range" id="gmSeek" min="0" max="1000" value="0" aria-label="Seek position for everyone"><small>Seeking changes playback for all listeners.</small></div>
-          <div id="resumeNotice" class="resume-notice" hidden><span id="resumeNoticeText">ANNOUNCEMENT INTERRUPTING MUSIC</span><button id="resumeMusicButton" class="button button-outline button-small" type="button">END BULLETIN + RESUME MUSIC</button></div>
+          <div id="resumeNotice" class="resume-notice" hidden><span id="resumeNoticeText">ANNOUNCEMENT INTERRUPTING MUSIC</span><button id="resumeMusicButton" class="button button-outline button-small" type="button">END ANNOUNCEMENT · RESUME TRACK</button></div>
         </div>
         <div class="library-grid">
           <div class="library-column">
             <section id="normalMusicSection"><div class="library-title"><h3>Music rotation</h3><span>PLAY A TRACK</span></div><div id="musicList" class="track-list"></div></section>
             <section id="combatMusicSection" hidden><div class="library-title"><h3>Combat rotation</h3><span>COMBAT TRACKS</span></div><p class="combat-list-note">The combat playlist replaces regular music until you end combat.</p><div id="combatList" class="track-list"></div></section>
           </div>
-          <div class="library-column"><div class="library-title"><h3>On-air announcements</h3><span>INTERRUPT BROADCAST</span></div><div id="announcementList" class="track-list"></div></div>
+          <div class="library-column"><div class="library-title"><h3>Announcements and cues</h3><span>PLAY AUDIO CUE</span></div><div id="announcementList" class="track-list"></div></div>
         </div>
         <section class="ambience-console" aria-label="Ambient soundscape controls">
           <div class="channel-title"><div><span class="subheading">CHANNEL B · LOOPED SOUNDSCAPES</span><h3>Ambient environment</h3></div><span class="channel-pill">INDEPENDENT TRANSPORT</span></div>
