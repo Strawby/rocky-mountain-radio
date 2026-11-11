@@ -132,11 +132,11 @@ function updatePanel() {
   $('loginPanel').hidden = isGM || !hasFirebase;
   $('demoWarning').hidden = hasFirebase;
   $('signOutButton').hidden = !hasFirebase || !auth?.currentUser || auth.currentUser.isAnonymous;
-  $('gmBadge').textContent = !hasFirebase ? 'LOCAL DEMO' : isGM ? 'DIRECTOR ONLINE' : 'AUTHENTICATION REQUIRED';
-  $('gmAccessButton').textContent = controlsOpen ? '✕ CLOSE CONSOLE' : '⚙ GM ACCESS';
+  $('gmBadge').textContent = !hasFirebase ? 'LOCAL DEMO' : isGM ? 'GM CONNECTED' : 'AUTHENTICATION REQUIRED';
+  $('gmAccessButton').textContent = controlsOpen ? '✕ CLOSE CONSOLE' : '⚙ GM CONTROLS';
   $('resumeNotice').hidden = !(isGM && state?.mode === 'announcement' && state.resume);
   $('resumeNoticeText').textContent = state?.resume?.mode === 'combat'
-    ? 'BULLETIN INTERRUPTING COMBAT MUSIC' : 'ANNOUNCEMENT INTERRUPTING MUSIC';
+    ? 'ANNOUNCEMENT INTERRUPTING COMBAT MUSIC' : 'ANNOUNCEMENT INTERRUPTING MUSIC';
   $('combatToggle').textContent = state?.combatActive ? '◀ END COMBAT · RESTORE RADIO' : '⚔ ENGAGE COMBAT · SWITCH PLAYLIST';
   $('combatToggle').setAttribute('aria-pressed', String(Boolean(state?.combatActive)));
   $('combatToggle').classList.toggle('active', Boolean(state?.combatActive));
@@ -171,8 +171,10 @@ function updateDisplay() {
   $('trackArtist').textContent = track?.artist || 'The high country is quiet.';
   document.querySelector('.record-art').classList.toggle('spinning', broadcasting && tuned);
   $('stationMessage').textContent = state?.mode === 'announcement'
-    ? '“A little message from yours truly. You wouldn’t want to miss it.”'
-    : '“Don’t you touch that dial, sweetheart. There’s nowhere else you need to be.”';
+    ? 'Announcement playing. The previous track will resume afterward.'
+    : state?.combatActive ? 'Combat music selected. Ambient playback continues independently.'
+    : broadcasting ? 'Broadcast playing. Adjust each audio layer independently.'
+    : 'Select a track to begin playback.';
   $('tuneLabel').textContent = tuned ? 'LEAVE FREQUENCY' : 'TUNE IN';
   $('tuneIcon').textContent = tuned ? '■' : '▶';
   const ambiance = ambientTrackFor();
@@ -296,7 +298,7 @@ function setTuned(value) {
     // This is triggered by an actual click; a browser gesture unlocks audio.
     syncAudio();
     syncAmbience();
-    if (!trackFor() && !ambientTrackFor()) hint('Tuned in. Waiting for the director to start playback.');
+    if (!trackFor() && !ambientTrackFor()) hint('Tuned in. Waiting for the GM to start playback.');
   } else { audio.pause(); ambientAudio.pause(); hint('Audio muted on this device. The shared radio and ambience keep going.'); }
   updateDisplay();
 }
