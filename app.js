@@ -421,24 +421,37 @@ async function ended() {
 
 function hookButtons() {
   $('tuneButton').addEventListener('click', () => setTuned(!tuned));
-  const volume = Number(localStorage.getItem('rmr-volume') || 75);
-  $('volumeSlider').value = String(Math.min(100, Math.max(0, volume)));
-  audio.volume = Number($('volumeSlider').value) / 100;
-  $('volumeLabel').textContent = `${$('volumeSlider').value}%`;
-  $('volumeSlider').addEventListener('input', (event) => {
-    audio.volume = Number(event.target.value) / 100;
-    $('volumeLabel').textContent = `${event.target.value}%`;
-    localStorage.setItem('rmr-volume', String(event.target.value));
-  });
-  const ambientVolume = Number(localStorage.getItem('rmr-ambience-volume') ?? 45);
-  $('ambientVolumeSlider').value = String(Math.min(100, Math.max(0, ambientVolume)));
-  ambientAudio.volume = Number($('ambientVolumeSlider').value) / 100;
-  $('ambientVolumeLabel').textContent = `${$('ambientVolumeSlider').value}%`;
-  $('ambientVolumeSlider').addEventListener('input', (event) => {
-    ambientAudio.volume = Number(event.target.value) / 100;
-    $('ambientVolumeLabel').textContent = `${event.target.value}%`;
-    localStorage.setItem('rmr-ambience-volume', String(event.target.value));
-  });
+  // Two-segment volume scale: new 100% = former 10% loudness;
+  // new 200% = former 100% (browser audio volume 1.0).
+  // Neither slider changes the Firebase broadcast: volumes are local per listener.
+  const volumeGain = (level) => {
+    const value = Math.max(0, Math.min(200, Number(level) || 0));
+    return value <= 100 ? value / 1000 : 0.1 + (value - 100) * 0.009;
+  };
+  const safeVolume = (level) => Math.max(0, Math.min(200, Math.round(Number(level) || 0)));
+  const initializeVolume = (sliderId, labelId, player, savedKey, previousKey) => {
+    // Old saved values ranged 0–100 in actual loudness. Preserve quiet
+    // preferences <=10%, but cap louder old values at the safer new 100%.
+    const saved = localStorage.getItem(savedKey);
+    const oldValue = localStorage.getItem(previousKey);
+    const initial = saved !== null ? safeVolume(saved)
+      : oldValue !== null ? safeVolume(Math.min(10, Math.max(0, Number(oldValue) || 0)) * 10)
+      : 100;
+    const slider = $(sliderId);
+    slider.value = String(initial);
+    player.volume = volumeGain(initial);
+    $(labelId).textContent = `${initial}%`;
+    localStorage.setItem(savedKey, String(initial));
+    slider.addEventListener('input', (event) => {
+      const selected = safeVolume(event.target.value);
+      player.volume = volumeGain(selected);
+      $(labelId).textContent = `${selected}%`;
+      localStorage.setItem(savedKey, String(selected));
+    });
+  };
+  initializeVolume('volumeSlider', 'volumeLabel', audio, 'rmr-volume-v2', 'rmr-volume');
+  initializeVolume('ambientVolumeSlider', 'ambientVolumeLabel', ambientAudio,
+    'rmr-ambience-volume-v2', 'rmr-ambience-volume');
   $('gmAccessButton').addEventListener('click', () => {
     controlsOpen = !controlsOpen; updatePanel();
     if (controlsOpen) $('gmPanel').scrollIntoView({ block: 'start', behavior: 'smooth' });
